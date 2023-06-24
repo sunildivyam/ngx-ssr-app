@@ -1,0 +1,24 @@
+{
+  "name": "@annuadvent/ngx-ssr-app",
+  "version": "1.0.0",
+  "description": "Basic SSR initialized app, that can be used to create other new SSR apps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunildivyam/ngx-ssr-app.git"
+  },
+  "keywords": [
+    "Angular",
+    "SSR",
+    "app"
+  ],
+  "author": "Annu advent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunildivyam/ngx-ssr-app/issues"
+  },
+  "homepage": "https://github.com/sunildivyam/ngx-ssr-app#readme"
+}
