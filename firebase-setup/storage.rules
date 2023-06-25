@@ -1,0 +1,32 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+  	match /annu-ng-lib/docs/{userid}/{imageName=**} {
+      // Only allow uploads of any image file that's less than 1MB
+      allow write, create, delete: if request.auth.uid == userid || request.auth.token.admin == true
+      allow read
+    }
+
+    match /annu-business/articles/{userid}/{imageId=**} {
+      // DEV: Only allow uploads of any image file that's less than 1MB
+      // allow write, create: if request.resource.size < 1 * 1048 * 1048
+                  //  && request.resource.contentType.matches('image/.*');
+      allow write, create, delete: if request.auth.uid == userid || request.auth.token.admin == true
+      allow read
+    }
+
+  	match /sitemap.xml {
+      // DEV: Only allow uploads of sitemap.xml
+      allow write, create, delete: if request.auth.token.admin == true;
+      allow read
+    }
+
+    match /annuadvent-prod/articles/{userid}/{imageId=**} {
+      // PROD: Only allow uploads of any image file that's less than 1MB
+      // allow write, create: if request.resource.size < 1 * 1048 * 1048
+      //              && request.resource.contentType.matches('image/.*');
+      allow write, create, delete: if request.auth.uid == userid || request.auth.token.admin == true
+      allow read
+    }
+  }
+}

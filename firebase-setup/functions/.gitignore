@@ -1,0 +1,4 @@
+node_modules/
+
+#Angular Server side and client side App distribution
+dist

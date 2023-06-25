@@ -1,5 +1,7 @@
 export const environment = {
+  development: false,
   staging: true,
+  production: false,
   envConfiguration: 'staging Configuration'
 };
 

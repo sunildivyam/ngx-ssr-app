@@ -6,10 +6,12 @@ import * as express from 'express';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { AppServerModule } from './src/main.server';
+import { environment } from './src/environments/environment';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
+
   const distFolder = join(process.cwd(), 'dist/ngx-ssr-app/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
@@ -22,11 +24,29 @@ export function app(): express.Express {
   server.set('views', distFolder);
 
   // Example Express Rest API endpoints
+  // server.use(bodyparser.json());
   // server.get('/api/**', (req, res) => { });
+
   // Serve static files from /browser
   server.get('*.*', express.static(distFolder, {
     maxAge: '1y'
   }));
+
+  // Routes that skips server side rendering
+  server.get(['/dashboard', '/dashboard/**'], (req, res) => {
+    res.sendFile(join(distFolder, `${indexHtml}`));
+  });
+
+  /*
+   *All image from /getImage?imageId={} url will be served from firebase storage on prod envs
+   * ONLY for DEV env, all images will serve only one image from local assets folder.
+   */
+  if (environment.development) {
+    server.get(['/getImage', '/getImage/**'], (req, res) => {
+      res.sendFile(join(distFolder, 'assets', 'local-image.jpg'));
+    });
+  }
+
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
