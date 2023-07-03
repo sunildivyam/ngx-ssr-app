@@ -1,0 +1,51 @@
+<div class="app-container container">
+  <anu-spinner id="app-spinner" [fullscreen]="true" [show]="appSpinner.isLoading" [mode]="SpinnerMode.Progress"
+    size="md"></anu-spinner>
+  <!-- App Header -->
+  <anu-menu class="flex-container primary-normal-bg center" [items]="mainMenuItems"
+    [logoUrl]="'/assets/annu-advent-logo.png'" [heading]="appConfig.metaInfo.title || ''"
+    (openStatusChanged)="mainMenuOpenStatusChanged($event)" [opened]="isMainNavOpen" [headingHref]="['./']">
+    <anu-login-status (profileClicked)="loginStatusClicked()" (signOutClicked)="loginStatusClicked()"
+      (signInClicked)="loginStatusClicked()" [loginPageUrl]="appConfig.loginUrl || ''"
+      [profilePageUrl]="appConfig.profileUrl || ''" [loggedOutPageUrl]="appConfig.logoutUrl || ''">
+    </anu-login-status>
+  </anu-menu>
+  <div class="flex-container center">
+    <anu-theme-font-resizer class="row right" [fontSizes]="themeFontSizes"></anu-theme-font-resizer>
+  </div>
+  <!-- App Content -->
+  <div class="container center left" role="main">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- App Footer -->
+  <div class="flex-container primary-lightest-bg center">
+    <footer class="container spacing-vertical">
+      <anu-footer-nav class="primary-lightest-bg" [copyrightText]="appConfig.copyrightText" [items]="footerNavItems">
+      </anu-footer-nav>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 shadow hidden">
+          <div class="container center">
+            <h3>SHARE</h3>
+            <!-- TODO: Add Share social media component -->
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4 shadow">
+          <div class="container center">
+            <a [routerLink]="appConfig?.aboutUsUrl">About us</a>
+            <a [routerLink]="appConfig?.contactUsUrl">Contact us</a>
+          </div>
+        </div>
+        <!-- Terms and condition links -->
+        <div class="col-sm-12 col-md-4 col-lg-4 shadow">
+          <small class="container center">
+            <a [routerLink]="appConfig?.tNcUrl">Terms and conditions</a>
+            <a [routerLink]="appConfig?.privacyPolicyUrl">Privacy policy</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

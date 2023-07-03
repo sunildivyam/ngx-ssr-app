@@ -1,0 +1,48 @@
+<div class="flex-container">
+    <h1 class="col-12 left">My Dashboard</h1>
+</div>
+
+<div *ngIf="!route.firstChild" class="flex-container secondary-lighter-bg">
+    <div class="left col-12">
+        <p>Manage your profile and authored articles.</p>
+    </div>
+</div>
+<div class="flex-container">
+    <div class="row" *ngIf="!route.firstChild">
+        <!--My Profile-->
+        <anu-card class="col-sm-12 col-md-6 col-lg-4 shadow spacing" [routerLinkActive]="'active'">
+            <anu-card-title>
+                <h2>My Profile</h2>
+            </anu-card-title>
+            <anu-card-body>
+                Manage your profile.
+            </anu-card-body>
+            <anu-card-footer>
+                <div class="container right">
+                    <a [routerLink]="['profile']">Manage profile</a><br />
+                </div>
+            </anu-card-footer>
+        </anu-card>
+
+        <!--Admin Panel-->
+        <anu-card *ngIf="isAdmin" class="col-sm-12 col-md-6 col-lg-4 shadow spacing" [routerLinkActive]="'active'">
+            <anu-card-title>
+                <h2>Admin Panel</h2>
+            </anu-card-title>
+            <anu-card-body>
+                Manage admin features.
+            </anu-card-body>
+            <anu-card-footer>
+                <div class="container right">
+                    <a [routerLink]="['admin-panel']">Manage admin panel</a><br />
+                </div>
+            </anu-card-footer>
+        </anu-card>
+    </div>
+    <div class="row" *ngIf="route.firstChild">
+        <a [routerLink]="['./']">{{'<< Back to dashboard'}}</a>
+    </div>
+</div>
+
+
+<router-outlet #dashboardOutlet (activate)="onOutletActivated()"></router-outlet>

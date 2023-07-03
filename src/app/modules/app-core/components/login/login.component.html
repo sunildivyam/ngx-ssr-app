@@ -1,0 +1,29 @@
+<div class="flex-container">
+    <div class="row-lg row-md col-sm nowrap stretch">
+        <anu-card class="col-6 col-sm-12 spacing-vertical login-intro">
+            <anu-card-title>
+                <h1>Sign In</h1>
+                Sign In into whole world of business and technology.
+                <h2>{{appConfig?.metaInfo?.title}}</h2>
+            </anu-card-title>
+            <anu-card-body>
+                <p>
+                    {{appConfig?.metaInfo?.description}}
+                </p>
+            </anu-card-body>
+        </anu-card>
+        <div class="col-6 col-sm-12 login-container">
+            <anu-error *ngIf="error" [code]="error?.code" [message]="error?.message"></anu-error>
+            <anu-login *ngIf="!isLoggedIn" (onSuccess)="onSuccess($event)" (onError)="onError($event)"
+                (onUiShown)="onUiShown()"></anu-login>
+            <ng-container *ngIf="isLoggedIn">
+                <h2 class="warning">Hi There!</h2>
+                <p>You have been signed in. If this is not you, please Sign out and Sign in again.</p>
+                <anu-login-status [loginPageUrl]="appConfig?.loginUrl || ''"
+                    [loggedOutPageUrl]="appConfig?.logoutUrl || ''" [profilePageUrl]="appConfig?.profileUrl || ''">
+                </anu-login-status>
+            </ng-container>
+            <anu-spinner [show]="loading"></anu-spinner>
+        </div>
+    </div>
+</div>
