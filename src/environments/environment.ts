@@ -4,7 +4,7 @@ import { firebaseConfig } from "../app/constants/firebase.config.development";
 import { openaiConfig } from "../app/constants/openai.config.development";
 import { dashboardConfig } from "../app/constants/dashboard.config.development";
 
-firebaseConfig.app.apiKey = 'AIzaSyDlzVES09CQFxt8oJI0u2srZFpH12wOAKk';
+firebaseConfig.app.apiKey = '';
 openaiConfig.apiKey = '';
 openaiConfig.organization = 'org-Cdw4eLOkxkrRo6ZOQFayrg4q';
 
