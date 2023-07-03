@@ -61,7 +61,7 @@ const ui = {
 };
 
 const app: FireAppConfig = {
-  apiKey: 'AIzaSyC5dVLk20wMQz8GWd2nYs-Sg6OrnTQsblU',
+  apiKey: '',
   authDomain: 'annuadvent-prod.firebaseapp.com',
   projectId: 'annuadvent-prod',
   locationId: 'us-central',
