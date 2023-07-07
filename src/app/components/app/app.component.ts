@@ -4,7 +4,7 @@ import { SpinnerMode } from '@annuadvent/ngx-common-ui/spinner';
 import { ThemeService } from '@annuadvent/ngx-common-ui/theme';
 import { AppSpinnerService } from '../../modules/app-core/services/app-spinner.service';
 import { AppStateService } from '../../modules/app-core/services/app-state.service';
-import { AppState } from '../../modules/app-core/interfaces/app-core.interface';
+import { AppState } from '../../modules/app-core/interfaces/app-state.interface';
 import { AppConfigService, AppConfig } from '@annuadvent/ngx-core/app-config';
 
 @Component({

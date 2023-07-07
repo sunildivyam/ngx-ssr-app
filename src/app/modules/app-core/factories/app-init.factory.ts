@@ -2,6 +2,7 @@ import { AppConfigService } from '@annuadvent/ngx-core/app-config';
 import { AppStateService } from '../services/app-state.service';
 import { environment } from '../../../../environments/environment';
 import { FireCommonService } from '@annuadvent/ngx-tools/fire-common';
+import { APP_STATE_KEYS } from '../constants/app-state.constants';
 
 /**
  * A factory to provide application data, before the app starts, like app config, menu items etc.
@@ -9,11 +10,11 @@ import { FireCommonService } from '@annuadvent/ngx-tools/fire-common';
  * @date 6/8/2023 - 4:20:26 PM
  *
  * @export
- * @param {AppStateService} appDataService
+ * @param {AppStateService} appStateService
  * @returns {() => any}
  */
 export function appInit(
-  appDataService: AppStateService,
+  appStateService: AppStateService,
   appConfigService: AppConfigService,
   fireCommonService: FireCommonService,
 ) {
@@ -25,7 +26,7 @@ export function appInit(
 
   // Sequential promises are needed here for navCategories. For other you can have parallel promises.
   const allPromises = Promise.all([
-    appDataService.getMainNavItems(),
+    appStateService.setState(APP_STATE_KEYS.mainNavItems),
   ])
 
   return () => allPromises;
