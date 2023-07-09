@@ -2,4 +2,16 @@
     #app-spinner {
         bottom: auto;
     }
+
+    anu-theme-font-resizer {
+        transition: all 0.5s;
+        transform: scale(0.6);
+        position: absolute;
+        right: 0;
+        top: -0.5rem;
+
+        &:hover {
+            transform: scale(1);
+        }
+    }
 }

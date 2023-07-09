@@ -11,7 +11,12 @@
     </anu-login-status>
   </anu-menu>
   <div class="flex-container center">
-    <anu-theme-font-resizer class="row right" [fontSizes]="themeFontSizes"></anu-theme-font-resizer>
+    <div class="row relative stretch">
+      <div class="col-12">
+        <anu-breadcrumb></anu-breadcrumb>
+      </div>
+      <anu-theme-font-resizer [fontSizes]="themeFontSizes"></anu-theme-font-resizer>
+    </div>
   </div>
   <!-- App Content -->
   <div class="container center left" role="main">

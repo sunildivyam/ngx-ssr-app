@@ -13,6 +13,7 @@ import { ThemeModule } from '@annuadvent/ngx-common-ui/theme';
 import { MenuModule } from '@annuadvent/ngx-common-ui/menu';
 import { FooterNavModule } from '@annuadvent/ngx-common-ui/footer-nav';
 import { ThemeFontResizerModule } from '@annuadvent/ngx-common-ui/theme-font-resizer';
+import { BreadcrumbModule } from '@annuadvent/ngx-common-ui/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ThemeFontResizerModule } from '@annuadvent/ngx-common-ui/theme-font-res
     FireAuthModule,
     UtilsModule,
     AppConfigModule,
+    BreadcrumbModule,
   ],
   providers: [
     {
