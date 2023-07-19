@@ -2,9 +2,10 @@
   <anu-spinner id="app-spinner" [fullscreen]="true" [show]="appSpinner.isLoading" [mode]="SpinnerMode.Progress"
     size="md"></anu-spinner>
   <!-- App Header -->
-  <anu-menu class="flex-container primary-normal-bg center" [items]="mainMenuItems"
-    [logoUrl]="'/assets/annu-advent-logo.png'" [heading]="appConfig.metaInfo.title || ''"
-    (openStatusChanged)="mainMenuOpenStatusChanged($event)" [opened]="isMainNavOpen" [headingHref]="['./']">
+  <anu-menu class="flex-container primary-normal-grad center" [items]="mainMenuItems"
+    [logoUrl]="'/assets/annu-advent-logo.png'" [heading]="appConfig?.name || ''"
+    [subHeading]="appConfig?.metaInfo?.title || ''" (openStatusChanged)="mainMenuOpenStatusChanged($event)"
+    [opened]="isMainNavOpen" [headingHref]="['./']">
     <anu-login-status (profileClicked)="loginStatusClicked()" (signOutClicked)="loginStatusClicked()"
       (signInClicked)="loginStatusClicked()" [loginPageUrl]="appConfig.loginUrl || ''"
       [profilePageUrl]="appConfig.profileUrl || ''" [loggedOutPageUrl]="appConfig.logoutUrl || ''">
@@ -24,9 +25,9 @@
   </div>
 
   <!-- App Footer -->
-  <div class="flex-container primary-lightest-bg center">
+  <div class="flex-container primary-lightest-grad center">
     <footer class="container spacing-vertical">
-      <anu-footer-nav class="primary-lightest-bg" [copyrightText]="appConfig.copyrightText" [items]="footerNavItems">
+      <anu-footer-nav class="primary-lightest-grad" [copyrightText]="appConfig.copyrightText" [items]="footerNavItems">
       </anu-footer-nav>
 
       <div class="row">
