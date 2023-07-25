@@ -33,7 +33,7 @@ export function app(): express.Express {
   }));
 
   // Routes that skips server side rendering
-  server.get(['/dashboard', '/dashboard/**'], (req, res) => {
+  server.get(['/login', '/dashboard', '/dashboard/**'], (req, res) => {
     res.sendFile(join(distFolder, `${indexHtml}`));
   });
 

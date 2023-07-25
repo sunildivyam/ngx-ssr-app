@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .login-container {
+        position: relative;
+        min-height: 5rem;
+    }
+}
