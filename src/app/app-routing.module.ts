@@ -7,7 +7,7 @@ import { AppSpinnerService } from './modules/app-core';
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking',
+    initialNavigation: 'enabledNonBlocking',    // this is needed to run APP_INITIALIZER before route resolvers
     scrollPositionRestoration: 'enabled',
   })],
   exports: [RouterModule]
