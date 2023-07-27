@@ -72,12 +72,12 @@ const app: FireAppConfig = {
 };
 
 const storage: FireStorageConfig = {
-  baseStoreUrl: 'annu-business/articles',
+  baseStorageUrl: 'annu-business/articles',
   fireStorageBaseApiUrl: 'https://firebasestorage.googleapis.com/v0/b/annu-business.appspot.com/o',
   imageDimensions: {
     maxKBs: 1024,
     maxWidth: 900,
-    maxHeight: 600,
+    maxHeight: 450,
     minWidth: 100,
     minHeight: 100,
   }
