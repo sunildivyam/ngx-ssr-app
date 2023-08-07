@@ -31,13 +31,15 @@
       </anu-footer-nav>
 
       <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-4 shadow hidden">
+        <!-- Social Media -->
+        <div class="col-sm-12 col-md-4 col-lg-4">
           <div class="container center">
-            <h3>SHARE</h3>
-            <!-- TODO: Add Share social media component -->
+            <h3>Find us on Social Media</h3>
+            <anu-social-media-buttons class="row center" [buttons]="socialMediaButtons"></anu-social-media-buttons>
           </div>
         </div>
 
+        <!-- About and contact -->
         <div class="col-sm-12 col-md-4 col-lg-4 shadow">
           <div class="container center">
             <a [routerLink]="appConfig?.aboutUsUrl">About us</a>
