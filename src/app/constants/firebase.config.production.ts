@@ -72,12 +72,12 @@ const app: FireAppConfig = {
 };
 
 const storage: FireStorageConfig = {
-  baseStoreUrl: 'annuadvent-prod/articles',
+  baseStorageUrl: 'annuadvent-prod/articles',
   fireStorageBaseApiUrl: 'https://firebasestorage.googleapis.com/v0/b/annuadvent-prod.appspot.com/o',
   imageDimensions: {
     maxKBs: 1024,
     maxWidth: 900,
-    maxHeight: 600,
+    maxHeight: 450,
     minWidth: 100,
     minHeight: 100,
   }

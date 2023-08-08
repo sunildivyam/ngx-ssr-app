@@ -58,4 +58,10 @@ export const appConfig: AppConfig = {
       href: ['./sample-category-4'],
     },
   ],
+  socialMedia: {
+    facebook: 'https://www.facebook.com/profile.php?id=100089738215994',
+    twitter: 'https://twitter.com/annuadvent',
+    linkedin: 'https://www.linkedin.com/company/annuadvent',
+    instagram: 'https://www.instagram.com/annuadvent/',
+  }
 };
