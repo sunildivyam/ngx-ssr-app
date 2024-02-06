@@ -17,8 +17,8 @@
     "url": "https://github.com/sunildivyam/ngx-ssr-app.git"
   },
   "engines": {
-    "node": "18.17.0",
-    "npm": "9.6.7"
+    "node": "20.9.0",
+    "npm": "10.1.0"
   },
   "scripts": {},
   "dependencies": {},
