@@ -1,17 +1,23 @@
 :host {
-    #app-spinner {
-        bottom: auto;
-    }
+  #app-spinner {
+    bottom: auto;
+  }
 
-    anu-theme-font-resizer {
-        transition: all 0.5s;
-        transform: scale(0.6);
-        position: absolute;
-        right: 0;
-        top: -0.5rem;
+  anu-theme-font-resizer {
+    transition: all 0.5s;
+    transform: scale(0.6);
+    position: absolute;
+    right: 0;
+    top: -0.5rem;
 
-        &:hover {
-            transform: scale(1);
-        }
+    &:hover {
+      transform: scale(1);
     }
+  }
+
+  anu-menu {
+    position: fixed;
+    top: 0;
+    z-index: $menu-z-index;
+  }
 }
