@@ -8,6 +8,7 @@
   ></anu-spinner>
   <!-- App Header -->
   <anu-menu
+    (onResizeMenu)="onMainMenuResize($event)"
     class="flex-container primary-normal-grad accent-deep-light center shadow"
     [items]="mainMenuItems"
     [logoUrl]="'/assets/annu-advent-logo.png'"

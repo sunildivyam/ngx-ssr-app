@@ -4,11 +4,10 @@ import { AppConfigService } from '@annuadvent/ngx-core/app-config';
 import { MenuItem } from '@annuadvent/ngx-common-ui/menu';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AppDataService {
-
-  constructor(private appConfigService: AppConfigService) { }
+  constructor(private appConfigService: AppConfigService) {}
 
   public async getValue(stateName: string, params: any = null): Promise<any> {
     let value: any = null;
