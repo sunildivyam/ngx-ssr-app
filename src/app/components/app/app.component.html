@@ -1,40 +1,20 @@
-<div class="app-container container" [style.marginTop]="menuHeight + 'px'">
-  <anu-spinner
-    id="app-spinner"
-    [fullscreen]="true"
-    [show]="appSpinner.isLoading"
-    [mode]="SpinnerMode.Progress"
-    size="md"
-  ></anu-spinner>
+<div class="app-container container">
+  <anu-spinner id="app-spinner" [fullscreen]="true" [show]="appSpinner.isLoading" [mode]="SpinnerMode.Progress"
+    size="md"></anu-spinner>
   <!-- App Header -->
-  <anu-menu
-    (onResizeMenu)="onMainMenuResize($event)"
-    class="flex-container primary-normal-grad accent-deep-light center shadow"
-    [items]="mainMenuItems"
-    [logoUrl]="'/assets/annu-advent-logo.png'"
-    [heading]="appConfig?.name || ''"
-    [headingPrefix]="'Annu'"
-    [subHeading]="appConfig?.metaInfo?.title || ''"
-    (openStatusChanged)="mainMenuOpenStatusChanged($event)"
-    [opened]="isMainNavOpen"
-    [headingHref]="['./']"
-    [headingPrefixHref]="['./']"
-    [menuClassNames]="[]"
-    [menuItemClassNames]="[
+  <anu-menu [fixed]="true" class="flex-container primary-normal-grad accent-deep-light center shadow"
+    [items]="mainMenuItems" [logoUrl]="'/assets/annu-advent-logo.png'" [heading]="appConfig?.name || ''"
+    [headingPrefix]="'Annu'" [subHeading]="appConfig?.metaInfo?.title || ''"
+    (openStatusChanged)="mainMenuOpenStatusChanged($event)" [opened]="isMainNavOpen" [headingHref]="['./']"
+    [headingPrefixHref]="['./']" [menuClassNames]="[]" [menuItemClassNames]="[
       'primary-normal-grad',
       'accent-deep-light',
       'border-round',
       'shadow'
-    ]"
-  >
-    <anu-login-status
-      (profileClicked)="loginStatusClicked()"
-      (signOutClicked)="loginStatusClicked()"
-      (signInClicked)="loginStatusClicked()"
-      [loginPageUrl]="appConfig.loginUrl || ''"
-      [profilePageUrl]="appConfig.profileUrl || ''"
-      [loggedOutPageUrl]="appConfig.logoutUrl || ''"
-    >
+    ]">
+    <anu-login-status (profileClicked)="loginStatusClicked()" (signOutClicked)="loginStatusClicked()"
+      (signInClicked)="loginStatusClicked()" [loginPageUrl]="appConfig.loginUrl || ''"
+      [profilePageUrl]="appConfig.profileUrl || ''" [loggedOutPageUrl]="appConfig.logoutUrl || ''">
     </anu-login-status>
   </anu-menu>
   <div class="flex-container center">
@@ -42,9 +22,7 @@
       <div class="col-12">
         <anu-breadcrumb></anu-breadcrumb>
       </div>
-      <anu-theme-font-resizer
-        [fontSizes]="themeFontSizes"
-      ></anu-theme-font-resizer>
+      <anu-theme-font-resizer [fontSizes]="themeFontSizes"></anu-theme-font-resizer>
     </div>
   </div>
   <!-- App Content -->
@@ -55,11 +33,7 @@
   <!-- App Footer -->
   <div class="flex-container primary-lightest-grad center">
     <footer class="container spacing-v">
-      <anu-footer-nav
-        class="primary-lightest-grad"
-        [copyrightText]="appConfig.copyrightText"
-        [items]="footerNavItems"
-      >
+      <anu-footer-nav class="primary-lightest-grad" [copyrightText]="appConfig.copyrightText" [items]="footerNavItems">
       </anu-footer-nav>
 
       <div class="row">
@@ -67,10 +41,7 @@
         <div class="col-sm-12 col-md-4 col-lg-4">
           <div class="container center">
             <h3>Find us on Social Media</h3>
-            <anu-social-media-buttons
-              class="row center"
-              [buttons]="socialMediaButtons"
-            ></anu-social-media-buttons>
+            <anu-social-media-buttons class="row center" [buttons]="socialMediaButtons"></anu-social-media-buttons>
           </div>
         </div>
 
